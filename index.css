@@ -1,0 +1,129 @@
+.da{
+	margin-top: 300px;
+	width:200px;height:200px;border:1px solid black;
+	/* transition-property:width,height;
+	transition-duration:.6s,.7s;
+	transition-timing-function:ease,linear;
+	transition-delay:0,.6s; */
+	/* transition:width 0.6s ease,height 0.5s 0.4s ease,background 1s 1s ease;
+	 */
+	 background-image:linear-gradient(black,red);
+	 transition:border-radius  1s ease,transform 1s 1s ease,box-shadow 1s 2s ease;}
+.da:hover{
+	border-radius: 50%;
+	transform:translateX(500px) rotateZ(360deg) ;
+	box-shadow:100px 0px yellow,-100px 0px yellow,0px -100px yellow,0px 100px yellow;
+}
+body{
+	margin: 0;padding:0;
+}
+nav{
+	width: 100%;height: 48px;background-color: black;position: absolute;
+	transition:height .5s ease;top: 0;left: 0;
+}
+input{
+	display: none;
+}
+label{
+	width: 48px;height: 48px;background:green;position: absolute;left: 20px;top: 0;
+}
+ul{
+	position:absolute;left: 0;top: 48px;width: 100%;padding:0;margin:0;visibility: hidden;
+}
+ul li{
+	border-bottom: 1px solid red;list-style: none;text-align: center;line-height: 48px;height: 48px;box-sizing:boder-box;margin:0 20px;color: white;
+}
+
+
+input:checked~nav .you{
+	transform:translateX(200px);
+}
+input:checked~nav{
+	height: 100%;
+	
+}
+.you{
+	width: 48px;height: 48px;background:green;position: absolute;top: 0;right: 0;
+}
+input:checked~nav ul{
+	visibility: visible;
+	transition:visibility .1s .2s ease;
+	
+}
+
+input:checked~nav ul li{
+	animation:zuofei 1s  both;
+}
+input:checked~nav ul li:nth-child(1){
+	animation-delay:.05s;
+}
+input:checked~nav ul li:nth-child(2){
+	animation-delay:.1s;
+}
+input:checked~nav ul li:nth-child(3){
+	animation-delay:.15s;
+}
+input:checked~nav ul li:nth-child(4){
+	animation-delay:.2s;
+}
+input:checked~nav ul li:nth-child(5){
+	animation-delay:.25s;
+}
+input:checked~nav ul li:nth-child(6){
+	animation-delay:.3s;
+}
+
+
+
+.zhege{
+	width: 300px;height: 300px;border:1px solid black;margin:200px auto;
+	animation-duration:1s;
+	animation-name:pao;
+}
+@keyframes zuofei{
+	0%{
+		transform:translateX(110%);
+	}
+	100%{
+		transform:translateX(0);
+	}
+}
+@keyframes pao{
+	0%,100%{
+		transform:translate3d(0,0,0);
+	}
+	25%{
+		transform:translate3d(150px,0,0);
+	}
+	50%{
+		transform:translate3d(150px,150px,0);
+	}
+	75%{
+		transform:translate3d(0px,150px,0);
+	}
+}
+.zhege1{
+	width: 200px;height: 200px;border:1px solid black;margin:300px auto;transform-origin:100px -100px;
+	/* animation-duration:1s;
+	animation-name:yao;
+	animation-direction:alternate;动画在重复多次的时候会反响动画
+	animation-iteration-count:infinite;无限循环
+	
+	animation-fill-mode:both;forwords backwords让动画保持在100%状态
+	animation-play-state:running;paused
+	animation-delay:4s; */
+	animation: 1s .2s 5  both yao alternate running;
+	
+}
+.zhege1:hover{
+	animation-play-state:paused;
+}
+@keyframes yao{
+	0%{
+		transform:rotateZ(-45deg);
+	}
+	
+	100%{
+		transform:rotateZ(45deg);
+	}
+}
